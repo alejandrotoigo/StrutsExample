@@ -1,19 +1,45 @@
 package models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="persona")
 public class Persona {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="idpersona")
+	private Integer idPersona;
+	@Column(name="nombre")
 	private String nombre;
+	@Column(name="apellido")
 	private String apellido;
+	@Column(name="numDocumento")
 	private Integer dni;
+	@Column(name="tipoDocumento")
 	private String tipoDni;
 	
+
 	public Persona() {
 	}
 
-	public Persona(String nombre, String apellido, Integer dni, String tipoDni) {
+	public Persona(Integer idPersona, String nombre, String apellido, Integer dni, String tipoDni) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
 		this.tipoDni = tipoDni;
+	}
+	
+	public Integer getIdPersona() {
+		return idPersona;
+	}
+
+	public void setIdPersona(Integer idPersona) {
+		this.idPersona = idPersona;
 	}
 
 	public String getNombre() {
