@@ -35,11 +35,11 @@ public class TipoProducto implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public int getIdtipoProducto() {
+	public int getIdTipoProducto() {
 		return idTipoProducto;
 	}
 
-	public void setIdtipoProducto(int idTipoProducto) {
+	public void setIdTipoProducto(int idTipoProducto) {
 		this.idTipoProducto = idTipoProducto;
 	}
 

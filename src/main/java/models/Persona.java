@@ -12,15 +12,15 @@ import javax.persistence.Table;
 public class Persona {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idpersona")
+	@Column(name="id")
 	private Integer idPersona;
 	@Column(name="nombre")
 	private String nombre;
 	@Column(name="apellido")
 	private String apellido;
-	@Column(name="numDocumento")
+	@Column(name="dni")
 	private Integer dni;
-	@Column(name="tipoDocumento")
+	@Column(name="tipo_documento")
 	private String tipoDni;
 	
 

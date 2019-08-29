@@ -57,5 +57,8 @@
 			</tr>
 		</logic:iterate>
 	</table>
+	<br>
+	<a href="producto/List.do"><button style="cursor: pointer;"
+			class="button-create">Ver los Productos</button></a>
 </body>
 </html>

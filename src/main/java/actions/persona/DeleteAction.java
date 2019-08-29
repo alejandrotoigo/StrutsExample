@@ -1,4 +1,4 @@
-package actions;
+package actions.persona;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +11,7 @@ import org.apache.struts.action.ActionMapping;
 import Services.ServPersona;
 import models.Persona;
 
-public class DeletePersonaAction extends Action {
+public class DeleteAction extends Action {
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
@@ -20,7 +20,7 @@ public class DeletePersonaAction extends Action {
 		String id = request.getParameter("idPersona");
 		servPersona.delete(Integer.valueOf(id));
 		request.setAttribute("personas", servPersona.findAll());
-		return super.execute(mapping, form, request, response);
+		return mapping.findForward("success");
 	}
 
 }

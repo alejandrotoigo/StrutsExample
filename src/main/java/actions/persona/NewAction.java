@@ -1,4 +1,4 @@
-package actions;
+package actions.persona;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +14,7 @@ import Services.ServPersona;
 import forms.PersonaForm;
 import models.Persona;
 
-public class NuevaPersonaAction extends Action {
+public class NewAction extends Action {
 
 	private static final String SUCCESS = "success";
 
