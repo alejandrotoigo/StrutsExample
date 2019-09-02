@@ -11,7 +11,7 @@
 <title>Nueva Persona</title>
 </head>
 <body>
-	<html:form action="createUpdatePersona">
+	<html:form action="persona/createUpdate">
 		<html:text property="idPersona" name="personaForm" style="display:none" />
 		<div>
 			<div style="color: red">

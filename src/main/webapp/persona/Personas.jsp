@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Tabla de Personas</h1>
-	<a href="createUpdate.do"><button style="cursor: pointer;"
+	<a href="/persona/new.do"><button style="cursor: pointer;"
 			class="button-create">Nueva Persona</button></a>
 
 	<table
@@ -48,17 +48,14 @@
 							style="cursor: pointer; text-decoration: none; color: red;"
 							class="button-delete">Delete</button>
 				</a> <a style="text-decoration: none;"
-					href="createUpdate.do?idPersona=<bean:write name="persona" property="idPersona" />">
-						<button
-							style="cursor: pointer; text-decoration: none; color: blue;"
+					href="/persona/new.do?idPersona=<bean:write name="persona" property="idPersona" />">
+						<button style="cursor: pointer; text-decoration: none; color: blue;"
 							class="button-delete">Edit</button>
 				</a>
 				</td>
 			</tr>
 		</logic:iterate>
 	</table>
-	<br>
-	<a href="producto/List.do"><button style="cursor: pointer;"
-			class="button-create">Ver los Productos</button></a>
+
 </body>
 </html>

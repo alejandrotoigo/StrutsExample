@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Listado de Productos</h1>
-	<a style="text-decoration: none;" href="new.do">
+	<a style="text-decoration: none;" href="/producto/new.do">
 		<button style="cursor: pointer;" class="button-delete">Nuevo
 			Producto</button>
 	</a>
@@ -43,12 +43,12 @@
 
 				<td style="border: 1px solid; padding: 10px; text-align: center;">
 					<a style="text-decoration: none;"
-					href="producto/deleteProducto.do?idProducto=<bean:write name="producto" property="idProducto" />">
+					href="delete.do?idProducto=<bean:write name="producto" property="idProducto" />">
 						<button
 							style="cursor: pointer; text-decoration: none; color: red;"
 							class="button-delete">Delete</button>
 				</a> <a style="text-decoration: none;"
-					href="createUpdate.do?idProducto=<bean:write name="producto" property="idProducto" />">
+					href="/producto/new.do?idProducto=<bean:write name="producto" property="idProducto" />">
 						<button
 							style="cursor: pointer; text-decoration: none; color: blue;"
 							class="button-delete">Edit</button>

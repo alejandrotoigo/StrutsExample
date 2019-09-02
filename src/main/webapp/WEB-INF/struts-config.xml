@@ -20,35 +20,34 @@
 			name: palabra devuelta
 			path: url de redireccionamiento (puede ser una accion o puede ser una jsp) 
 	-->
-		<action path="/createUpdatePersona"
+		<action path="/persona/createUpdate"
 			type="actions.persona.CreateUpdateAction" name="personaForm" scope="request"
-			input="/Persona.jsp">
-			<forward name="success" path="/listPersona.do" />
-			<forward name="failure" path="/Persona.jsp" />
+			input="/persona/Persona.jsp">
+			<forward name="success" path="/persona/list.do" />
+			<forward name="failure" path="/persona/Persona.jsp" />
 		</action>
-		<action path="/listPersona" type="actions.persona.ListAction">
+		<action path="/persona/list" type="actions.persona.ListAction">
 			<forward name="success" path="/persona/Personas.jsp" />
 		</action>
-		<action path="/delete" type="actions.persona.DeleteAction">
-			<forward name="success" path="/Index.jsp" />
+		<action path="/persona/delete" type="actions.persona.DeleteAction">
+			<forward name="success" path="/persona/list.do" />
 		</action>
-		<action path="/createUpdate" type="actions.persona.NewAction">
+		<action path="/persona/new" type="actions.persona.NewAction">
 			<forward name="success" path="/persona/Persona.jsp" />
 		</action>
 		<action path="/producto/List" type="actions.producto.ListAction">
 			<forward name="success" path="/producto/ListProductos.jsp" />
 		</action>
-		<action path="/producto/delete"
-			type="actions.producto.DeleteAction">
+		<action path="/producto/delete" type="actions.producto.DeleteAction">
 			<forward name="success" path="/producto/ListProductos.jsp" />
 		</action>
-		<!-- Formulario (Boton Nuevo Producto/Editar Producto) -->
-		<action path="/producto/createUpdate" name="productoForm"
+		<!-- Formulario (Submit Action form) -->
+		<action path="/producto/createUpdate" name="productoForm" input="/producto/Producto.jsp"
 			scope="request" type="actions.producto.CreateUpdateAction">
 			<forward name="success" path="/producto/ListProductos.jsp" />
 			<forward name="failure" path="/producto/Producto.jsp" />
 		</action>
-		<!-- Formulario (Boton Nuevo Producto/Editar Producto) -->
+		<!-- Cuando apreto en el boton Nuevo o Editar -->
 		<action path="/producto/new"
 			type="actions.producto.NewAction">
 			<forward name="success" path="/producto/Producto.jsp" />

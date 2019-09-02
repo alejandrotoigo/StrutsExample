@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<html:form action="/producto/createUpdate">
+	<html:form action="producto/createUpdate.do">
 		<html:text property="idProducto" name="productoForm"
 			style="display:none" />
 		<div>

@@ -26,8 +26,6 @@ public class NewAction extends Action {
 		ServProducto servProducto = new ServProducto();
 		ServTipoProducto servTipoProducto = new ServTipoProducto();
 		pForm.setListadoProductos(servTipoProducto.listadoProductos());
-		System.out.println(pForm.getListadoProductos());
-		// request.setAttribute("selectProductos", pForm);
 		if (request.getParameter("idProducto") != null) {
 
 			// ServTipoProducto servTipoProducto = new ServTipoProducto();

@@ -16,20 +16,23 @@ import models.Producto;
 public class CreateUpdateAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
+		ServTipoProducto servTipoProducto = new ServTipoProducto();
+		ProductoForm pForm = (ProductoForm) form;
+
 		try {
-			ServTipoProducto servTipoProducto = new ServTipoProducto();
 			ServProducto servProducto = new ServProducto();
 
-			ProductoForm pForm = (ProductoForm) form;
-			if (pForm.getIdProducto() != null && pForm.getIdProducto() > 0) 
+			if (pForm.getIdProducto() != null && pForm.getIdProducto() > 0)
 				servProducto.update(pForm);
-			 else 
+			else
 				servProducto.create(pForm);
-			
+
 			request.setAttribute("productos", servProducto.findAll());
 			return mapping.findForward("success");
 		} catch (Exception e) {
 			e.printStackTrace();
+			pForm.setListadoProductos(servTipoProducto.listadoProductos());
+			request.setAttribute("productoForm", pForm);
 			return mapping.findForward("failure");
 		}
 	}

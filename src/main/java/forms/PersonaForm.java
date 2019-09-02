@@ -24,6 +24,9 @@ public class PersonaForm extends ActionForm {
 	 */
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
 		ActionErrors errors = new ActionErrors();
+		
+		
+		
 		if (nombre == null || nombre.length() < 1) {
 			errors.add("nombre", new ActionMessage("error.nombre.required"));
 		}

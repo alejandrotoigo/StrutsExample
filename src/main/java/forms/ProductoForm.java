@@ -1,6 +1,5 @@
 package forms;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +9,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
+import Services.ServTipoProducto;
 import models.TipoProducto;
 
 public class ProductoForm extends ActionForm {
@@ -32,9 +32,13 @@ public class ProductoForm extends ActionForm {
 		if (stock < 0) {
 			errors.add("stock", new ActionMessage("error.stock.required"));
 		}
-		if (idTipoProducto == -1) {
+		if (idTipoProducto == -1 || idTipoProducto == 0) {
 			errors.add("idTipoProducto", new ActionMessage("error.idTipoProducto.required"));
 		}
+		
+		ServTipoProducto servTipoProducto = new ServTipoProducto();
+		setListadoProductos(servTipoProducto.listadoProductos());
+		
 		return errors;
 	}
 
